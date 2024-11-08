@@ -1,14 +1,14 @@
--- Prep for running this.
--- Need to push files to an internal stage and run script from there.
--- snow sql -q "create database snowflake_cli_db";
--- snow stage create snowflake_cli_db.public.my_stage;
--- snow stage copy ./schemas/nested_script.sql @snowflake_cli_db.public.my_stage/test_segments/scripts  --overwrite;  
-
--- snow stage copy ./schemas/00_fin_customer_cust360_schema_setup.sql @snowflake_cli_db.public.my_stage/test_segments/scripts  --overwrite;
-
--- Once files are in stage then just run from Snowflake CLI:
--- michaeltacker@macOS-V6Q79GW9CG scripts % snow sql -f main.sql
-
+/****************************************************************************************\
+ SCRIPT:    This script sets up session variables that will be used by build_schema.sql
+  --        to build out the database (if not exists), schema, roles and roles hierarchy.  
+  --        
+  --         
+  YY-MM-DD WHO          CHANGE DESCRIPTION
+  -------- ------------ -----------------------------------------------------------------
+  To-Do         
+  ---------------------------------------------------------------------------------------
+  --
+\****************************************************************************************/
 SET beNm = 'ADM';        -- Business Entity / Segment
 SET dbNm = 'CONTROL';    -- Database Name
 SET scNm = 'ALERTS_SCHEMA';       -- Schema Name
@@ -41,7 +41,7 @@ SET warU = $whNm || '_WU_AR';  -- Monitor & Usage
 SET warO = $whNm || '_WO_AR';  -- Operate & Modify (so WH can be resized operationally if needed)
 
 
-
-
-
+---------------------------------------------------------------------------------
+-- build_schema.sql is a generic script that creates any schema:
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/build_schema.sql;
+---------------------------------------------------------------------------------

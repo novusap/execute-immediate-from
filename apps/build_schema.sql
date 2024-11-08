@@ -1,5 +1,5 @@
 /****************************************************************************************\
- SCRIPT:    Environment Creation Script
+ SCRIPT:    Generic Database/Schema creation script
 
   -- Desc:  generic script showing how to manually maintain privileges to access roles
   --        Below script sets context for naming convention
@@ -48,8 +48,8 @@ CREATE ROLE IF NOT EXISTS IDENTIFIER($sarR);
 CREATE ROLE IF NOT EXISTS IDENTIFIER($sarW);
 CREATE ROLE IF NOT EXISTS IDENTIFIER($sarC);
 
-show roles;
-SELECT $sarR;
+-- show roles;
+-- SELECT $sarR;
 ---------------------------------------------------------------
 -- 2. SECURITYADMIN now wire roles for hierarchy
 ---------------------------------------------------------------
@@ -174,6 +174,7 @@ GRANT CREATE ALERT             ON SCHEMA IDENTIFIER($schemaNm)  TO ROLE IDENTIFI
 -- GRANT CREATE TAG               ON SCHEMA IDENTIFIER($schemaNm)  TO ROLE IDENTIFIER($sarC);
 GRANT CREATE MASKING POLICY    ON SCHEMA IDENTIFIER($schemaNm)  TO ROLE IDENTIFIER($sarC);
 GRANT CREATE ROW ACCESS POLICY ON SCHEMA IDENTIFIER($schemaNm)  TO ROLE IDENTIFIER($sarC);
+-- Testing:
 -- PDE_TAGGING_FR IS THE ONLY ROLE IN THE ACCOUNT THAT CAN CREATE TAGS.
 -- COULD GRANT TO ANOTHER ROLE IF WE DECIDE TO LIKE THIS:
 -- USE ROLE USERADMIN;
@@ -186,7 +187,6 @@ GRANT CREATE TAG ON SCHEMA IDENTIFIER($schemaNm) TO ROLE PDE_TAGADMIN_FR;
 -- show grants to role IDENTIFIER($sarC);
 -- show grants to role IDENTIFIER($localfrAdmin);
 -- show grants to role IDENTIFIER($pltfrAdmin);
-
 
 -------------------------------------------------------------
 -- 5. Optional: GRANT schema access roles to DB level access roles, if database roles are utilized
@@ -201,7 +201,6 @@ GRANT CREATE TAG ON SCHEMA IDENTIFIER($schemaNm) TO ROLE PDE_TAGADMIN_FR;
 -------------------------------------------------------------
 USE ROLE IDENTIFIER($pltfrAdmin); -- DATABASE AND SCHEMAS OWNED BY PLATFORM ADMIN!
 DROP SCHEMA IF EXISTS IDENTIFIER($publicSchemaNm); -- Best practice to always drop the PUBLIC schema
-
 
 -------------------------------------------------------------
 -- 7. WAREHOUSE GRANTS
@@ -266,8 +265,7 @@ GRANT ROLE IDENTIFIER($warO) TO ROLE IDENTIFIER($localfrAdmin);
 -- END SCHEMA CREATION. OPTIONAL, CONTINUE TO TESTS BELOW.
 ---------------------------------------------------------------
 
--- USE SCHEMA ADM_CONTROL_DB.DEPLOY;
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/create_test_db.sql
+
 
 ---------------------------------------------------------------
 -- 100. TEST
