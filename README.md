@@ -11,8 +11,9 @@ I'm having no issues building across multiple accounts. The issue is with my nes
 I've tried various approaches:
 
 ## Approach #1  
-
-Am using Github Actions [with main.yml](/.github/workflows/main.txt) to run sf_deploy_prd.sql using EXECUTE IMMEDIATE FROM".   sf_deploy_prd.sql contains two statements (below).   
+apps/sf_deploy_prd.sql
+1) Using Github Actions [with main.yml](/.github/workflows/main.txt) fires [sf_deploy_prd.sql](sf_deploy_prd.sql) using EXECUTE IMMEDIATE FROM".   
+2) sf_deploy_prd.sql contains two statements (below).   
 
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;     <<-- First line succeeds  
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql; <<-- Second line fails  
