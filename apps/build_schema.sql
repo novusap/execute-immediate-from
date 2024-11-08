@@ -1,6 +1,6 @@
-/****************************************************************************************\
- SCRIPT:    Generic Database/Schema creation script
-
+  ---------------------------------------------------------------------------------------
+  --  SCRIPT:    Generic Database/Schema creation script
+  --
   -- Desc:  generic script showing how to manually maintain privileges to access roles
   --        Below script sets context for naming convention
   --        Creates platform administration roles (platform admin, local admin)
@@ -23,9 +23,9 @@
   --        resources.
   --       
   --         
-  YY-MM-DD WHO          CHANGE DESCRIPTION
+  -- YY-MM-DD WHO          CHANGE DESCRIPTION
   -------- ------------ -----------------------------------------------------------------
-  To-Do         
+  -- To-Do         
   ---------------------------------------------------------------------------------------
   -- Right now all these privileges to PROD as well as the lower environments! This is 
   -- not optimal. We would want different (fewer) write privileges in Prod.
@@ -33,7 +33,7 @@
   -- between environments when granting privileges to Functional Roles.
   -- Below merely sets up 3 buckets of privileges in 3 generic roles (read/write/create). 
   -- These privileges are then rolled up into a hierarchy.
-\****************************************************************************************/
+  ---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------
 -- 1. USERADMIN CREATE the account-level maint functional roles
