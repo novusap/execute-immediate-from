@@ -1,6 +1,6 @@
 # Problems using EXECUTE IMMEDIATE
 
-The desire is to use Github Actions and "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  
+The desire is to use Github Actions with "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  
 
 Current pipeline:
 
