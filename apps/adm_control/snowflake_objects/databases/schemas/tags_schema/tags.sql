@@ -1,6 +1,6 @@
 /****************************************************************************************\
  SCRIPT:    This script sets up session variables that will be used by build_schema.sql
-  --        to build out the database (if not exists), schema, roles and roles hierarchy.  
+  --        to create database (if not exists), schema, roles and roles hierarchy.  
   --        
   --         
   YY-MM-DD WHO          CHANGE DESCRIPTION
