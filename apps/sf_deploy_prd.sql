@@ -13,13 +13,13 @@
 -------------------------------------
 
 -- SCHEMAS
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/adm_control_db/schemas/tags/tags_schema.sql;
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/adm_control_db/schemas/alerts/alerts_schema.sql;
+EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
+EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql;
 -- "Unsupported feature 'session variables not supported during object dependencies backfill."
 
-EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_silver/fin_sales_silver_schema.sql;
-EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_bronze/fin_sales_bronze_schema.sql;
-EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_gold/fin_sales_gold_schema.sql;
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_silver/fin_sales_silver_schema.sql;
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_bronze/fin_sales_bronze_schema.sql;
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_gold/fin_sales_gold_schema.sql;
 
 -- -- TABLES
 -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/bronze/Tables/Customer.sql USING (ENV => 'PRD');
