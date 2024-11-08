@@ -42,7 +42,6 @@ mkdir -p ./apps/adm_control/{snowflake_objects/databases/adm_control_db/schemas/
 
 
 
-
 ## Functional Role Descriptions
 - This isn't real. I got the data from Gitlab docs and found the table formatter online. Roles and Descriptions might be worth comparing to our Functional Roles. But the formatter from table data in Excel is worth using!!
 - https://handbook.gitlab.com/handbook/enterprise-data/platform/#warehouse-access
