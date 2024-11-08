@@ -1,4 +1,4 @@
-# Approaches to using EXECUTE IMMEDIATE and errors
+# Problems using EXECUTE IMMEDIATE
 
 The desire is to use Github Actions and "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  
 
