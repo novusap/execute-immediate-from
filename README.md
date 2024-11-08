@@ -12,7 +12,7 @@ A commit to Github [triggers main.yml](/.github/workflows/main.txt).  main.yml c
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[build_schema.sql](apps/build_schema.sql)  
 
 
-## Approach #1 - Commits to the repo:
+## Approach #1 - Triggered by Github actions on commit to repo:
 
 ```
 First execution succeeds >> EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
@@ -24,7 +24,7 @@ Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branche
 Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.    
 ```
 
-## Approach 2 - Manually from the command line:  
+## Approach 2 - Run manually from the command line:  
 
 ![alt text](image.png)
 \****************************************************************************************/
