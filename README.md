@@ -1,7 +1,8 @@
 # Approaches to using EXECUTE IMMEDIATE and errors
 
 The desire is to use Github Actions together with "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  
-Here's the desired flow:
+
+Current pipeline:
 
 Github Actions [triggers main.yml](/.github/workflows/main.txt), and main.yml calls:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[sf_deploy_prd.sql](apps/sf_deploy_prd.sql) calls:  
