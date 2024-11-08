@@ -2,6 +2,13 @@
 
 The desire is to use Github Actions together with "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  Here's the desired flow:
 
+Github Actions [triggers main.yml](/.github/workflows/main.txt)
+    main.yml calls:
+        - [tags.sql](apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql) 
+            - [build_schema.sql](apps/build_schema.sql) 
+        - [alerts.sql](apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql) 
+            - [build_schema.sql](apps/build_schema.sql) 
+
 1) A commit to a branch (dev/qa/prd) [triggers main.yml](/.github/workflows/main.txt)  which fires sf_deploy_prd.sql (my driver script).
 2) sf_deploy_prd.sql will contain ALL updates we wish to perform, each also using "EXECUTE IMMEDIATE FROM".
 3) Commits to Dev writes to our Dev account, qa to our qa account, etc .
@@ -15,11 +22,12 @@ I've tried various approaches:
 1) Using Github Actions [with main.yml](/.github/workflows/main.txt) fires [sf_deploy_prd.sql](apps/sf_deploy_prd.sql) using EXECUTE IMMEDIATE FROM".   
 2) sf_deploy_prd.sql contains two statements (below).  
 3) tags.
-[tags.sql](apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql) 
+
+
 
 apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql
 [
-    
+
     
 ](apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql)
 
