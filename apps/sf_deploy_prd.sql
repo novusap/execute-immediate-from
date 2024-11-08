@@ -9,38 +9,29 @@
 -- \****************************************************************************************/
 
 
--- -- UPDATES IN ADM_CONTROL_DB DATABASE
--------------------------------------
 
 -- SCHEMAS      
 
--- 
+-- Add TAGS schema to ADM_CONTROL_DB database
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
+-- Add ALERTS schema to ADM_CONTROL_DB database
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql;
+-- ^ The second time a script is run that call throws the following error
 -- Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 20 at position 0:           │
 -- │ Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.    
 
 
 
--- "Unsupported feature 'session variables not supported during object dependencies backfill."
+-- Them, I Have in mind the following pattern:
 
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_silver/fin_sales_silver_schema.sql;
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_bronze/fin_sales_bronze_schema.sql;
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_gold/fin_sales_gold_schema.sql;
+-- -- TABLES 
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO (TABLE 1)
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO (TABLE 2)
 
--- -- TABLES
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/bronze/Tables/Customer.sql USING (ENV => 'PRD');
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/bronze/Tables/Orders.sql USING (ENV => 'PRD');
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/bronze/Tables/Product.sql USING (ENV => 'PRD');
--- -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/silver/Tables/Customer.sql USING (ENV => 'PRD');
--- -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/silver/Tables/Orders.sql USING (ENV => 'PRD');
--- -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/silver/Tables/Product.sql USING (ENV => 'PRD');
--- -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/gold/Tables/Shipping.sql USING (ENV => 'PRD');
- 
 -- -- VIEWS
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/bronze/Views/Customer_Orders.sql USING (ENV => 'PRD');
--- -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/silver/Views/Customer_Orders.sql USING (ENV => 'PRD');
--- -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/silver/Views/Product_Inventory.sql USING (ENV => 'PRD');
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO (VIEW 1)
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO (VIEW 2)
 
 -- -- PROCEDURES
--- -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/project_files/bronze/Procedures/Load_Bronze_Customer_Orders.sql USING (ENV => 'PRD');
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO (PROC 1)
+-- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO (PROC 2)
