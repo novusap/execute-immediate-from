@@ -35,3 +35,5 @@ Cannot perform operation. This session does not have a current database. Call 'U
 ## Snowflake Object Hierarchy
 ![Snowflake Object Hierarchy](./.images/snowflakeObjectHierarchy.png)
 
+
+
