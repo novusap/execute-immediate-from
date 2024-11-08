@@ -19,8 +19,10 @@ First line succeeds >> EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/maste
 Second line fails >> EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql; 
 ```
 Exception on second line:  
+```
 Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 20 at position 0:           │
  │ Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.    
+```
 
 ## Approach 2 - From the command line:  
 
