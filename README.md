@@ -1,6 +1,5 @@
 # Approaches to using EXECUTE IMMEDIATE and errors
 
-
 # Approach #1  
 
 Use EXECUTE IMMEDIATE FROM to call sf_deploy_prd.sql.   sf_deploy_prd.sql contains two statements (below).   
