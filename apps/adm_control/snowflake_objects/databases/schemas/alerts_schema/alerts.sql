@@ -7,12 +7,14 @@
   --            DEPLOY_SCHEMA   - git repository for EXECUTE IMMEDIATE FROM calls
   --            ALERTS_SCHEMA   - to maintain standards around alerting for the account
   --            TAGS_SCHEMA     - to maintain standards around tagging for the account
+  -- 
   YY-MM-DD WHO          CHANGE DESCRIPTION
   -------- ------------ -----------------------------------------------------------------
   To-Do         
   ---------------------------------------------------------------------------------------
   --
 \****************************************************************************************/
+
 SET beNm = 'ADM';               -- Business Entity / Segment
 SET dbNm = 'CONTROL';           -- Database Name
 SET scNm = 'ALERTS_SCHEMA';     -- Schema Name
