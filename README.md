@@ -16,7 +16,7 @@ A commit to Github [triggers main.yml](/.github/workflows/main.txt).  main.yml c
 
 ```
 tags.sql succeeds >> EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
-alerts.sql fails >> EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql; 
+alerts.sql fails  >> EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql; 
 ```
 Exception on second EXECUTE IMMEDIATE FROM: 
 ```
