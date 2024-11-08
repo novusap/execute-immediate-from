@@ -27,7 +27,7 @@ Cannot perform operation. This session does not have a current database. Call 'U
 ## Approach 2 - Run manually from the command line:  
 Same error:  
 
-![alt text](image.png)
+![alt text](./.image.png)
 \****************************************************************************************/
 
 
