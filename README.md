@@ -2,7 +2,7 @@
 
 The desire is to use Github Actions together with "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  Here's the desired flow:
 
-1) A commit to a branch triggers Main.yml to fire sf_deploy_prd.sql (my driver script).
+1) A commit to a branch  [triggers main.yml](/.github/workflows/main.txt)  which fires sf_deploy_prd.sql (my driver script).
 2) sf_deploy_prd.sql will contain ALL updates we wish to perform, each also using "EXECUTE IMMEDIATE FROM".
 
 ## Approach #1  
