@@ -12,12 +12,16 @@
 -- -- UPDATES IN ADM_CONTROL_DB DATABASE
 -------------------------------------
 
--- SCHEMAS
--- Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 17 at position 0:           │
--- │ Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.          
+-- SCHEMAS      
 
+-- 
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql;
+-- Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 20 at position 0:           │
+-- │ Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.    
+
+
+
 -- "Unsupported feature 'session variables not supported during object dependencies backfill."
 
 -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/fin_sales/snowflake_objects/databases/schemas/fin_sales_silver/fin_sales_silver_schema.sql;

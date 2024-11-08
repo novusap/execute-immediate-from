@@ -1,5 +1,19 @@
-# Snowflake Demo
-# 
+# Approaches to using EXECUTE IMMEDIATE and errors
+
+
+# Approach #1  
+
+Use EXECUTE IMMEDIATE FROM to call sf_deploy_prd.sql.   sf_deploy_prd.sql contains two statements (below).   
+
+EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;     <<-- First line succeeds  
+EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql; <<-- Second line fails  
+
+Exception on second line:  
+Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 20 at position 0:           │
+ │ Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.    
+
+snow sql -q "ALTER GIT REPOSITORY SNOWFLAKE_GIT_REPO FETCH" --temporary-connection -- MY CREDS;
+snow sql -q "EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql" --temporary-connection -- MY CREDS;
 
 
 
