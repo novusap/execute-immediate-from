@@ -12,7 +12,7 @@ I've tried various approaches:
 
 ## Approach #1  
 apps/sf_deploy_prd.sql
-1) Using Github Actions [with main.yml](/.github/workflows/main.txt) fires [sf_deploy_prd.sql](sf_deploy_prd.sql) using EXECUTE IMMEDIATE FROM".   
+1) Using Github Actions [with main.yml](/.github/workflows/main.txt) fires [sf_deploy_prd.sql](apps/sf_deploy_prd.sql) using EXECUTE IMMEDIATE FROM".   
 2) sf_deploy_prd.sql contains two statements (below).   
 
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;     <<-- First line succeeds  
