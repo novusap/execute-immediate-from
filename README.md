@@ -27,7 +27,6 @@ Cannot perform operation. This session does not have a current database. Call 'U
 ## Approach 2 - Manually from the command line:  
 
 ![alt text](image.png)
-
 \****************************************************************************************/
 
 
