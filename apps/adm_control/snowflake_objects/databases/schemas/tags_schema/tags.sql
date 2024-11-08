@@ -11,7 +11,7 @@
 
 SET beNm = 'ADM';        -- Business Entity / Segment
 SET dbNm = 'CONTROL';    -- Database Name
-SET scNm = 'ALERTS';       -- Schema Name
+SET scNm = 'TAGS_SCHEMA';       -- Schema Name
 
 -- construct the database name and delegated admin role
 SET prefixNm = $beNm;
@@ -41,7 +41,6 @@ SET warU = $whNm || '_WU_AR';  -- Monitor & Usage
 SET warO = $whNm || '_WO_AR';  -- Operate & Modify (so WH can be resized operationally if needed)
 
 
-
-
+-- USE SCHEMA ADM_CONTROL_DB.DEPLOY;
 
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/build_schema.sql;
