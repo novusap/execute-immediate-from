@@ -15,7 +15,7 @@ Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branche
 snow sql -q "ALTER GIT REPOSITORY SNOWFLAKE_GIT_REPO FETCH" --temporary-connection -- MY CREDS;
 snow sql -q "EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql" --temporary-connection -- MY CREDS;
 
-
+\****************************************************************************************/
 
 Description of repo here
 
