@@ -1,9 +1,14 @@
 # Approaches to using EXECUTE IMMEDIATE and errors
 
-# Approach #1  
+The desire is to use Github Actions together with "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  Here's the desired flow:
+
+1) A commit to a branch triggers Main.yml to fire sf_deploy_prd.sql (my driver script).
+2) sf_deploy_prd.sql will contain ALL updates we wish to perform, each also using "EXECUTE IMMEDIATE FROM".
+
+## Approach #1  
 
 Am using Github Actions [with main.yml](/.github/workflows/main.txt) to run sf_deploy_prd.sql using EXECUTE IMMEDIATE FROM".   sf_deploy_prd.sql contains two statements (below).   
-<a href="https://github.com/mtacker/execute-immediate-from/blob/master/.github/workflows/main.txt" target="_blank">with main.yml</a>
+
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;     <<-- First line succeeds  
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql; <<-- Second line fails  
 
