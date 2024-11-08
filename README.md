@@ -14,10 +14,10 @@ I've tried various approaches:
 apps/sf_deploy_prd.sql
 1) Using Github Actions [with main.yml](/.github/workflows/main.txt) fires [sf_deploy_prd.sql](apps/sf_deploy_prd.sql) using EXECUTE IMMEDIATE FROM".   
 2) sf_deploy_prd.sql contains two statements (below).   
-
+```
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;     <<-- First line succeeds  
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql; <<-- Second line fails  
-
+```
 Exception on second line:  
 Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 20 at position 0:           │
  │ Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.    
