@@ -12,9 +12,10 @@
 
 -- SCHEMAS      
 
--- Add TAGS schema to ADM_CONTROL_DB database
+-- Add TAGS schema to ADM_CONTROL_DB database:
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
--- Add ALERTS schema to ADM_CONTROL_DB database
+
+-- Add ALERTS schema to ADM_CONTROL_DB database:
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql;
 -- ^ The second time a script is run that call throws the following error
 -- Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 20 at position 0:           │
