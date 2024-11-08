@@ -24,7 +24,7 @@ Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branche
 Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.    
 ```
 
-## Approach 2 - Run manually from the command line:  
+## Approach 2 - Run from the command line:  
 Same error:  
 
 ![alt text](./.images/image.png)
