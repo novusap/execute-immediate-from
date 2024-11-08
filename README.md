@@ -20,7 +20,7 @@ Second execution fails >> EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/ma
 ```
 Exception on second EXECUTE IMMEDIATE FROM: 
 ```
-Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 20 at position 0:   
+Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 17 at position 0:   
 Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.    
 ```
 
