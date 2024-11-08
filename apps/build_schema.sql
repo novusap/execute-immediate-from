@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------
- SCRIPT:    Environment Creation Script
+--  SCRIPT:    Environment Creation Script
 
   -- Desc:  generic script showing how to manually maintain privileges to access roles
   --        Below script sets context for naming convention
@@ -23,9 +23,9 @@
   --        resources.
   --       
   --         
-  YY-MM-DD WHO          CHANGE DESCRIPTION
+  -- YY-MM-DD WHO          CHANGE DESCRIPTION
   -------- ------------ -----------------------------------------------------------------
-  To-Do         
+  -- To-Do         
   ---------------------------------------------------------------------------------------
   -- Right now all these privileges to PROD as well as the lower environments! This is 
   -- not optimal. We would want different (fewer) write privileges in Prod.
