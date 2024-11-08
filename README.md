@@ -2,7 +2,6 @@
 
 The desire is to use Github Actions with "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  
 
-
 Current pipeline:
 
 A commit to Github [triggers main.yml](/.github/workflows/main.txt).  main.yml calls:  
