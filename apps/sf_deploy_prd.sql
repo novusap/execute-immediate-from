@@ -13,6 +13,9 @@
 -------------------------------------
 
 -- SCHEMAS
+-- Uncaught exception of type 'STATEMENT_ERROR' in file @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 17 at position 0:           │
+-- │ Cannot perform operation. This session does not have a current database. Call 'USE DATABASE', or use a qualified name.          
+
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql;
 -- "Unsupported feature 'session variables not supported during object dependencies backfill."
