@@ -22,7 +22,7 @@ EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snow
 
 
 
--- Them, I Have in mind the following pattern:
+-- Then I Have in mind the following pattern:
 
 -- -- TABLES 
 -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO (TABLE 1)
