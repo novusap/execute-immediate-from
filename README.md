@@ -2,8 +2,8 @@
 
 # Approach #1  
 
-Use EXECUTE IMMEDIATE FROM to call sf_deploy_prd.sql.   sf_deploy_prd.sql contains two statements (below).   
-
+Am using Github Actions [with main.yml](/.github/workflows/main.txt) to run sf_deploy_prd.sql using EXECUTE IMMEDIATE FROM".   sf_deploy_prd.sql contains two statements (below).   
+    # relative to opened project
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;     <<-- First line succeeds  
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql; <<-- Second line fails  
 
