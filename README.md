@@ -28,12 +28,7 @@ Cannot perform operation. This session does not have a current database. Call 'U
 Same error:  
 
 ![alt text](./.images/image.png)
-\****************************************************************************************/
 
-
-
-## Snowflake Object Hierarchy
-![Snowflake Object Hierarchy](./.images/snowflakeObjectHierarchy.png)
 
 
 
