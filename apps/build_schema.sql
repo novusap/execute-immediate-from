@@ -1,4 +1,4 @@
-/****************************************************************************************\
+-----------------------------------------------------------------------------------
  SCRIPT:    Environment Creation Script
 
   -- Desc:  generic script showing how to manually maintain privileges to access roles
@@ -33,7 +33,7 @@
   -- between environments when granting privileges to Functional Roles.
   -- Below merely sets up 3 buckets of privileges in 3 generic roles (read/write/create). 
   -- These privileges are then rolled up into a hierarchy.
-\****************************************************************************************/
+-----------------------------------------------------------------------------------
 
 ---------------------------------------------------------------
 -- 1. USERADMIN CREATE the account-level maint functional roles
