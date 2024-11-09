@@ -1,6 +1,10 @@
 # Problems using EXECUTE IMMEDIATE
 
-The desire is to use Github Actions with "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  
+- The desire is to use Github Actions with "EXECUTE IMMEDIATE FROM" to orchestrate our deployments.  
+
+The issue seems to be around the way in which I'm parameterizing my scripts using SET statements.  My SET statements create variables to give us a level  of abstraction that will support a robust orchestration and deployment model in a multi-user/multi-team environment.
+
+- Below are the two different approaches I've tried
 
 ## Approach 1
 - Include SET variables WITH the build code:
