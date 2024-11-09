@@ -17,7 +17,6 @@
 -- "Unsupported feature 'session variables not supported during object dependencies backfill"
 -- *********************************************************
 
-
 -- *********************************************************
 -- Approach 2 - Separate SET variables FROM the build code:
 -- Results in error:
