@@ -1,4 +1,6 @@
 ---------------------------------------------------------------------------------------
+-- For testing, this script includes the build steps AND variables
+---------------------------------------------------------------------------------------
 -- SCRIPT:    This script sets up session variables that will be used by build_schema.sql
 --        to create database (if not exists), schema, roles and roles hierarchy.  
 -- 
