@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------------------
---  SCRIPT:    Code from this script updates objects in the QA_DB database 
---             in the QA Snowflake Account.
---             Confusing, yes. But We're really just testing builds accross accounts.
+--  SCRIPT:    Code from this script updates objects in Snowflake QA account.
+--             
+--             
 --
 --   YY-MM-DD WHO          CHANGE DESCRIPTION
 --   -------- ------------ -----------------------------------------------------------------

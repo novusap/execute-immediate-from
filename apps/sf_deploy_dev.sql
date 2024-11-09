@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------------------
---  SCRIPT:    Code from this script updates objects in the DEV_DB database 
---             in the DEV Snowflake Account.
---             Confusing, yes. But We're really just testing builds accross accounts.
+--  SCRIPT:    Code from this script updates objects in Snowflake DEV account.
+--             
+--             
 --
 --   YY-MM-DD WHO          CHANGE DESCRIPTION
 --   -------- ------------ -----------------------------------------------------------------
