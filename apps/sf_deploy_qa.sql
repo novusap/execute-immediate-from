@@ -1,4 +1,4 @@
--- /****************************************************************************************\
+--------------------------------------------------------------------------------------------
 --  SCRIPT:    Code from this script updates objects in the QA_DB database 
 --             in the QA Snowflake Account.
 --             Confusing, yes. But We're really just testing builds accross accounts.
@@ -6,7 +6,7 @@
 --   YY-MM-DD WHO          CHANGE DESCRIPTION
 --   -------- ------------ -----------------------------------------------------------------
 
--- \****************************************************************************************/
+--------------------------------------------------------------------------------------------
 
 -- TABLES
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/qa/apps/bronze/Tables/Customer.sql USING (ENV => 'QA', TEST => 'TST');

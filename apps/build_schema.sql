@@ -1,39 +1,39 @@
-  ---------------------------------------------------------------------------------------
-  --  SCRIPT:    Generic Database/Schema creation script
-  --
-  -- Desc:  generic script showing how to manually maintain privileges to access roles
-  --        Below script sets context for naming convention
-  --        Creates platform administration roles (platform admin, local admin)
-  --        Creates database
-  --        creates schema
-  --        creates roles (access roles)
-  --        creates role heirarchy
-  --        grants access to roles (read, read/write, full/create)
-  --        creates warehouses
-  --        creates warehouse access roles
-  --        grants roles for warehouse to access roles
-  --       
-  --       
-  -- 
-  -- Note:  The below scripts are account-level roles but COULD be modified to include 
-  --        database roles where appropriate
-  --        
-  --        Also, these are all NON-DESTRUCTIVE, idempotent statements in this script. 
-  --        This means it can be run multiple times without destroying existing 
-  --        resources.
-  --       
-  --         
-  -- YY-MM-DD WHO          CHANGE DESCRIPTION
-  -------- ------------ -----------------------------------------------------------------
-  -- To-Do         
-  ---------------------------------------------------------------------------------------
-  -- Right now all these privileges to PROD as well as the lower environments! This is 
-  -- not optimal. We would want different (fewer) write privileges in Prod.
-  -- To-Do: Come up with something like the Stored Proc that Molex uses to differentiate
-  -- between environments when granting privileges to Functional Roles.
-  -- Below merely sets up 3 buckets of privileges in 3 generic roles (read/write/create). 
-  -- These privileges are then rolled up into a hierarchy.
-  ---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+--  SCRIPT:    Generic Database/Schema creation script
+--
+-- Desc:  generic script showing how to manually maintain privileges to access roles
+--        Below script sets context for naming convention
+--        Creates platform administration roles (platform admin, local admin)
+--        Creates database
+--        creates schema
+--        creates roles (access roles)
+--        creates role heirarchy
+--        grants access to roles (read, read/write, full/create)
+--        creates warehouses
+--        creates warehouse access roles
+--        grants roles for warehouse to access roles
+--       
+--       
+-- 
+-- Note:  The below scripts are account-level roles but COULD be modified to include 
+--        database roles where appropriate
+--        
+--        Also, these are all NON-DESTRUCTIVE, idempotent statements in this script. 
+--        This means it can be run multiple times without destroying existing 
+--        resources.
+--       
+--         
+-- YY-MM-DD WHO          CHANGE DESCRIPTION
+-------- ------------ -----------------------------------------------------------------
+-- To-Do         
+---------------------------------------------------------------------------------------
+-- Right now all these privileges to PROD as well as the lower environments! This is 
+-- not optimal. We would want different (fewer) write privileges in Prod.
+-- To-Do: Come up with something like the Stored Proc that Molex uses to differentiate
+-- between environments when granting privileges to Functional Roles.
+-- Below merely sets up 3 buckets of privileges in 3 generic roles (read/write/create). 
+-- These privileges are then rolled up into a hierarchy.
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------
 -- 1. USERADMIN CREATE the account-level maint functional roles

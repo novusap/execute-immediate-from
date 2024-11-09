@@ -1,18 +1,18 @@
-  ---------------------------------------------------------------------------------------
-  -- SCRIPT:    This script sets up session variables that will be used by build_schema.sql
-  --        to create database (if not exists), schema, roles and roles hierarchy.  
-  -- 
-  --        ADM_CONTROL_DB will be our Account Control database with limited acccess.
-  --        Schemas include:
-  --            DEPLOY_SCHEMA   - git repository for EXECUTE IMMEDIATE FROM calls
-  --            ALERTS_SCHEMA   - to maintain standards around alerting for the account
-  --            TAGS_SCHEMA     - to maintain standards around tagging for the account
-  -- 
-  -- YY-MM-DD WHO          CHANGE DESCRIPTION
-  ---------------------------------------------------------------------------------------
-  --   To-Do         
-  ---------------------------------------------------------------------------------------
-  ---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+-- SCRIPT:    This script sets up session variables that will be used by build_schema.sql
+--        to create database (if not exists), schema, roles and roles hierarchy.  
+-- 
+--        ADM_CONTROL_DB will be our Account Control database with limited acccess.
+--        Schemas include:
+--            DEPLOY_SCHEMA   - git repository for EXECUTE IMMEDIATE FROM calls
+--            ALERTS_SCHEMA   - to maintain standards around alerting for the account
+--            TAGS_SCHEMA     - to maintain standards around tagging for the account
+-- 
+-- YY-MM-DD WHO          CHANGE DESCRIPTION
+---------------------------------------------------------------------------------------
+--   To-Do         
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 
 
 SET beNm = 'ADM';               -- Business Entity / Segment
