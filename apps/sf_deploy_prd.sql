@@ -8,7 +8,11 @@
 
 --------------------------------------------------------------------------------------------
 
--- SCHEMAS      
+-- SCHEMAS     
+
+-- Add TAGS schema to ADM_CONTROL_DB database:
+EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags_build.sql;
+
 -- 
 -- Add TAGS schema to ADM_CONTROL_DB database:
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
