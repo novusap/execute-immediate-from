@@ -31,6 +31,8 @@ A commit to Github [triggers main.yml](/.github/workflows/main.yml).  main.yml c
 
 ![alt text](.images/separate_vars.png)
 
+![alt text](.images/db_image.png)
+
 
 
 
