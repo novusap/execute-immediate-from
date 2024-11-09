@@ -10,16 +10,21 @@
 
 -- SCHEMAS     
 
--- *********************************************************
+--------------------------------------------------------------------------------------------
 -- Approach 1 - Include SET variables WITH the build code:
--- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags_build.sql;
+EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags_build.sql;
 -- Results in error:
 -- "Unsupported feature 'session variables not supported during object dependencies backfill"
--- *********************************************************
+--------------------------------------------------------------------------------------------
 
--- *********************************************************
--- Approach 2 - Separate SET variables FROM the build code:
--- Results in error:
+--------------------------------------------------------------------------------------------
+-- Approach 2 - Separate SET variables FROM the build code
+--------------------------------------------------------------------------------------------
+-- tags.sql SUCCEEDS
+EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
+
+-- Alerts.sql FAILS with:
+--
 -- Uncaught exception of  │
 -- │ type 'STATEMENT_ERROR' in file                                               │
 -- │ @SNOWFLAKE_GIT_REPO/branches/master/apps/sf_deploy_prd.sql on line 21 at     │
@@ -27,14 +32,15 @@
 -- │ Cannot perform operation. This session does not have a current database.     │
 -- │ Call 'USE DATABASE', or use a qualified name.   
 -- *********************************************************
-EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/tags_schema/tags.sql;
-
--- Add ALERTS schema to ADM_CONTROL_DB database:
 EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO/branches/master/apps/adm_control/snowflake_objects/databases/schemas/alerts_schema/alerts.sql;
 
+--------------------------------------------------------------------------------------------
 
 
--- The rest of my orchestration would look like this:
+
+
+
+-- The rest of my proposed orchestration would look like this:
 
 -- -- TABLES 
 -- EXECUTE IMMEDIATE FROM @SNOWFLAKE_GIT_REPO (TABLE 1)
